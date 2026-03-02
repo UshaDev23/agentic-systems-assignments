@@ -1,4 +1,4 @@
-from pydantic import BaseModel, EmailStr, Field, ValidationError, ConfigDict
+from pydantic import BaseModel, EmailStr, Field, ValidationError, field_validator, ConfigDict
 from typing import Optional
 
 class Address(BaseModel):
