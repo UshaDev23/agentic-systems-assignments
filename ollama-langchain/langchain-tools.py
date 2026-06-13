@@ -4,8 +4,6 @@ from langchain_core.tools import tool
 from langchain_core.prompts import ChatPromptTemplate, MessagesPlaceholder
 from langchain_classic.agents import AgentExecutor, create_tool_calling_agent
 
-OLLAMA_HOST = "http://localhost:11434"
-MODEL_NAME = "qwen3:0.6b"
 
 
 orders_db = {
@@ -217,9 +215,14 @@ agent_executor = AgentExecutor(
 )
 
 test_queries = [
+
+    # Single tool Query
     "What is the current status of order ORD-101?",
+    # Multi Tool Query
     "Can you tell me the status of ORD-101 and when it is expected to be delivered?",
+    # No Tool Query
     "What services can you help me with regarding orders?",
+    # Invalid order Query
     "What is the status of order ORD-999?"
 ]
 
